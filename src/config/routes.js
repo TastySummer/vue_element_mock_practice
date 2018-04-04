@@ -9,11 +9,11 @@ export default [
     path: '/',
     component: index,
     children: [{
-      name: '新建渠道',
+      name: '分组一',
       path: 'channelmanagement/add',
       component: add
     }, {
-      name: '渠道维护 ',
+      name: '分组二',
       path: 'channelmanagement/maintenance',
       component: maintenance
     }]

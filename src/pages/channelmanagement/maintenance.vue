@@ -1,6 +1,6 @@
 <template>
   <div id="addmaintenance">
-    <div>你的位置: 渠道管理 > {{position}}</div>
+    <div>你的位置: 导航一 > {{position}}</div>
   </div>
 </template>
 

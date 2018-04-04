@@ -1,6 +1,6 @@
 <template>
   <div id="add">
-    <div>你的位置: 渠道管理 > {{position}}</div>
+    <div>你的位置: 导航一 > {{position}}</div>
     <el-card class="box-card">
       <div slot="header" class="clearfix">
         <span>基本信息</span>
@@ -9,7 +9,7 @@
         <el-row :gutter="40">
           <el-col :span="8">
             <div class="grid-content">
-              渠道商编码
+              筛选一
               <el-input
                 placeholder="请输入内容"
                 v-model="code"
@@ -19,7 +19,7 @@
           </el-col>
           <el-col :span="8">
             <div class="grid-content">
-              <span class="red">*</span>渠道商全称
+              <span class="red">*</span>筛选一
               <el-input
                 placeholder="请输入内容"
                 v-model="name"
@@ -29,7 +29,7 @@
           </el-col>
           <el-col :span="8">
             <div class="grid-content">
-              <span class="red">*</span>渠道商简称
+              <span class="red">*</span>筛选一
               <el-input
                 placeholder="请输入内容"
                 v-model="brief"
@@ -41,7 +41,7 @@
         <el-row :gutter="40">
           <el-col :span="8">
             <div class="grid-content">
-              <span class="red">*</span>渠道类型
+              <span class="red">*</span>筛选一
               <el-select v-model="type_value" placeholder="请选择">
                 <el-option
                   v-for="item in type_options"
@@ -54,7 +54,7 @@
           </el-col>
           <el-col :span="8">
             <div class="grid-content">
-              <span class="red">*</span>合作类型
+              <span class="red">*</span>筛选一
               <el-select v-model="type_value" placeholder="请选择">
                 <el-option
                   v-for="item in type_options"
@@ -67,7 +67,7 @@
           </el-col>
           <el-col :span="8">
             <div class="grid-content">
-              <span class="red">*</span>营业执照号
+              <span class="red">*</span>筛选一
               <el-input
                 placeholder="请输入内容"
                 v-model="brief"
@@ -86,7 +86,7 @@
         <el-row :gutter="40">
           <el-col :span="8">
             <div class="grid-content">
-              渠道商编码
+              筛选一
               <el-input
                 placeholder="请输入内容"
                 v-model="code"
@@ -96,7 +96,7 @@
           </el-col>
           <el-col :span="8">
             <div class="grid-content">
-              <span class="red">*</span>渠道商全称
+              <span class="red">*</span>筛选一
               <el-input
                 placeholder="请输入内容"
                 v-model="name"
@@ -106,7 +106,7 @@
           </el-col>
           <el-col :span="8">
             <div class="grid-content">
-              <span class="red">*</span>渠道商简称
+              <span class="red">*</span>筛选一
               <el-input
                 placeholder="请输入内容"
                 v-model="brief"
@@ -118,7 +118,7 @@
         <el-row :gutter="40">
           <el-col :span="8">
             <div class="grid-content">
-              <span class="red">*</span>渠道类型
+              <span class="red">*</span>筛选一
               <el-select v-model="type_value" placeholder="请选择">
                 <el-option
                   v-for="item in type_options"
@@ -131,7 +131,7 @@
           </el-col>
           <el-col :span="8">
             <div class="grid-content">
-              <span class="red">*</span>合作类型
+              <span class="red">*</span>筛选一
               <el-select v-model="type_value" placeholder="请选择">
                 <el-option
                   v-for="item in type_options"
@@ -144,7 +144,7 @@
           </el-col>
           <el-col :span="8">
             <div class="grid-content">
-              <span class="red">*</span>营业执照号
+              <span class="red">*</span>筛选一
               <el-input
                 placeholder="请输入内容"
                 v-model="brief"
@@ -170,19 +170,19 @@
         brief: '',
         type_options: [{
           type_value: '选项1',
-          label: '互联网'
+          label: '选项1'
         }, {
           type_value: '选项2',
-          label: '法人保证'
+          label: '选项2'
         }, {
           type_value: '选项3',
-          label: '自然人保证'
+          label: '选项3'
         }, {
           type_value: '选项4',
-          label: '主承租人'
+          label: '选项4'
         }, {
           type_value: '选项5',
-          label: '供应商'
+          label: '选项5'
         }],
         type_value: ''
       })

@@ -12,7 +12,15 @@
         position: this.$route.name
       })
     },
-    methods: {}
+    mounted: function () {
+      this.sendRouteToParent()
+    },
+    methods: {
+      sendRouteToParent: function(){
+        var _this = this;
+        _this.$emit("listenToChildEvent", _this.$route.name);
+      }
+    }
   }
 </script>
 

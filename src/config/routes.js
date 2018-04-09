@@ -8,6 +8,7 @@ export default [
   {
     path: '/',
     component: index,
+    name: '首页',
     children: [{
       name: '分组一',
       path: 'channelmanagement/add',

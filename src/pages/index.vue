@@ -43,7 +43,13 @@
       </el-aside>
       <el-container>
         <el-main>
-          <router-view></router-view>
+          <div v-if="IndexPageVisible">
+            欢迎登陆！
+          </div>
+          <div v-show="!IndexPageVisible">
+            <!-- 使用v-show，否则影响router-view的挂载 -->
+            <router-view v-on:listenToChildEvent="showMsgFromChild"></router-view>
+          </div>
         </el-main>
         <el-footer></el-footer>
       </el-container>
@@ -57,32 +63,50 @@
   export default {
     name: 'index',
     data: function () {
-      return
+      return ({
+        IndexPageVisible: true
+      })
     },
     mounted: function () {
+      //尝试发送ajax请求
       api.post('/news/index', 'type=top&key=123456')
         .then(res => {
           console.log(res)
           if(res.status === 200){
-            this.$message({
-              message: '请求mock数据成功！',
-              type: 'success'
-            });
+            // this.$message({
+            //   message: '请求mock数据成功！',
+            //   type: 'success'
+            // });
           }else{
-            this.$message({
-              message: '请求mock数据失败！',
-              type: 'error'
-            });
+            // this.$message({
+            //   message: '请求mock数据失败！',
+            //   type: 'error'
+            // });
           }
         });
     },
     watch: {},
     methods:{
+      goBack () {
+        window.history.length > 1
+          ? this.$router.go(-1)
+          : this.$router.push('/')
+      },
       handleOpen(key, keyPath) {
-        console.log(key, keyPath);
+        this.$router.push('/')
+        this.IndexPageVisible = true
       },
       handleClose(key, keyPath) {
-        console.log(key, keyPath);
+        this.$router.push('/')
+        this.IndexPageVisible = true
+      },
+      showMsgFromChild(pathName){
+        if(pathName === '/'){
+          this.IndexPageVisible = true
+        }else{
+          console.log(pathName)
+          this.IndexPageVisible = false
+        }
       }
     }
   }

@@ -162,7 +162,6 @@
   export default {
     name: "add",
     data: function () {
-      console.log(this.$route)
       return ({
         position: this.$route.name,
         code: '',
@@ -187,7 +186,15 @@
         type_value: ''
       })
     },
-    methods: {}
+    mounted: function () {
+      this.sendRouteToParent()
+    },
+    methods: {
+      sendRouteToParent: function(){
+        var _this = this;
+        _this.$emit("listenToChildEvent", _this.$route.name);
+      }
+    }
   }
 </script>
 

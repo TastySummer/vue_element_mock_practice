@@ -1,16 +1,15 @@
 import axios from 'axios'
 import qs from 'qs'
-import Toast from 'element-ui'
 
 let axiosIns = axios.create({});
 
-if (process.env.NODE_ENV == 'development') {
-  axiosIns.defaults.baseURL = '/';
-} else if (process.env.NODE_ENV == 'debug') {
-  axiosIns.defaults.baseURL = '***';
-} else if (process.env.NODE_ENV == 'production') {
-  axiosIns.defaults.baseURL = '***';
-}
+// if (process.env.NODE_ENV == 'development') {
+//   axiosIns.defaults.baseURL = '***';
+// } else if (process.env.NODE_ENV == 'debug') {
+//   axiosIns.defaults.baseURL = '***';
+// } else if (process.env.NODE_ENV == 'production') {
+//   axiosIns.defaults.baseURL = '***';
+// }
 
 axiosIns.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';
 axiosIns.defaults.headers.get['X-Requested-With'] = 'XMLHttpRequest';
@@ -54,21 +53,8 @@ ajaxMethod.forEach((method)=> {
          ...
          */
         if (response.data.statusCode) {
-          Toast({
-            message: response.data.Message,
-            position: '',
-            duration: 2000
-          });
 
-          if (response.data.Message === '未登录') {
-            // Toast({
-            //   message: response.data.Message,
-            //   position: '',
-            //   duration: 2000
-            // });
-            //使用vue实例做出对应行为  change state or router
-            //instance.$store.commit('isLoginShow',true);
-          }
+
         } else {
           resolve(response);
         }

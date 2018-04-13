@@ -24,7 +24,7 @@ module.exports = {
   context: path.resolve(__dirname, '../'),
   devtool: 'source-map',
   entry: {
-    app: './src/main.js'
+    app: './src/client/main.js'
   },
   output: {
     path: config.build.assetsRoot,

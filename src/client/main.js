@@ -7,9 +7,9 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import VueRouter from 'vue-router'
 import routes from './config/routes'
-import '../theme/index.css'
+import '../../theme/index.css'
 import './style/common.css'
-require('./mock.js')
+require('../../mock/mock.js')
 import api from './config/api.js'
 
 Vue.use(ElementUI)

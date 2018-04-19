@@ -2,6 +2,7 @@
 import index from '../pages/index.vue'
 import add from '../pages/channelmanagement/add.vue'
 import maintenance from '../pages/channelmanagement/maintenance.vue'
+import practice from '../practice.vue'
 
 // 配置路由
 export default [
@@ -18,5 +19,9 @@ export default [
       path: 'channelmanagement/maintenance',
       component: maintenance
     }]
+  }, {
+    path: '/practice',
+    component: practice,
+    name: '基础练习'
   }
 ]

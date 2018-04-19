@@ -46,6 +46,7 @@
           <div v-if="IndexPageVisible">
             欢迎登陆！
           </div>
+          <!--<slot>欢迎登陆！</slot>-->
           <div v-show="!IndexPageVisible">
             <!-- 使用v-show，否则影响router-view的挂载 -->
             <router-view v-on:listenToChildEvent="showMsgFromChild"></router-view>

@@ -1,6 +1,6 @@
 <template>
 	<div id="practice">
-		<p v-once>Message: {{reverseMessage}}</p>
+		<p>Message: {{reverseMessage}}</p>
 		<p v-once>Message2: {{reversedMessage()}}</p>
 		<p v-html="rawHtml"></p>
 		<button v-bind:id="dynamicId" v-bind:disabled="!isButtonDisabled">
@@ -44,12 +44,17 @@
 		<ul>
 			<li v-for="n in evenNumbers">{{n}}</li>
 		</ul>
+		<comp1></comp1>
+		<input v-model.lazy="message" placeholder="edit me">
+		<p>Message is: {{message}}</p>
 	</div>
 </template>
 
 
 
 <script>
+	import comp1 from './comp1.vue'
+
 	export default {
 		name: "practice",
 		data: function () {
@@ -86,8 +91,12 @@
 				numbers: [ 1, 2, 3, 4, 5 ]
 			})
 		},
+		components: {
+			comp1
+		},  
 		computed: {
 			reverseMessage: function(){
+				console.log(this.message)
 				return this.message.split('').reverse().join('');
 			},
 			classObject: function(){

@@ -47,6 +47,31 @@
 		<comp1></comp1>
 		<input v-model.lazy="message" placeholder="edit me">
 		<p>Message is: {{message}}</p>
+		<button v-on:click="warn('Form cannot be submitted yet.', $event)">
+  			Submit
+		</button>
+		<input type="checkbox" id="checkbox" v-model="checked">
+		<label for="checkbox">{{ checked }}</label>
+		<div>
+			<input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+			<label for="jack">Jack</label>
+			<input type="checkbox" id="john" value="John" v-model="checkedNames">
+			<label for="john">John</label>
+			<input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+			<label for="mike">Mike</label>
+			<br>
+			<span v-for="(item, index) in checkedNames">{{ index ===  checkedNames.length-1 ? item : item+', '}}</span>
+		</div>
+		<div id="example-4">
+			<input type="radio" id="one" value="One" v-model="picked">
+			<label for="one">One</label>
+			<br>
+			<input type="radio" id="two" value="Two" v-model="picked">
+			<label for="two">Two</label>
+			<br>
+			<span>Picked: {{ picked }}</span>
+		</div>
+
 	</div>
 </template>
 
@@ -88,7 +113,10 @@
 					lastName: 'Doe',
 					age: 30
 				},
-				numbers: [ 1, 2, 3, 4, 5 ]
+				numbers: [ 1, 2, 3, 4, 5 ],
+				checked: true,
+				checkedNames:["Jack"],
+				picked: ''
 			})
 		},
 		components: {
@@ -121,6 +149,13 @@
 				_this.clickTimes ++;
 				var index = _this.clickTimes%2;
 				_this.loginType = loginType[index];
+			},
+			warn: function(message, event){
+				console.log(event);
+				if(event){
+					event.preventDefault();
+				}
+				alert(message)
 			}
 		}
 	}
